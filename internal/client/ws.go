@@ -9,7 +9,7 @@ import (
 )
 
 func JoinRoom(roomId string) {
-	url := "ws://localhost:8080/ws/" + roomId
+	url := "wss://ghost-hhch.onrender.com/ws/" + roomId
 
 	conn, _, err := websocket.DefaultDialer.Dial(url, nil)
 	if err != nil {
