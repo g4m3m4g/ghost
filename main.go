@@ -1,6 +1,6 @@
 package main
 
-import "ghost/cmd"
+import "github.com/g4m3m4g/ghost/cmd"
 
 func main() {
 	cmd.Execute()

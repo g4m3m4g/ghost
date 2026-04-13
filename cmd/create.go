@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"ghost/internal/client"
+	"github.com/g4m3m4g/ghost/internal/client"
 
 	"github.com/spf13/cobra"
 )
@@ -15,7 +15,7 @@ var createCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		roomId := args[0]
 
-		resp, err := http.Post("http://localhost:8080/create/"+roomId, "", nil)
+		resp, err := http.Post("https://ghost-hhch.onrender.com/create/"+roomId, "", nil)
 		if err != nil || resp.StatusCode != 200 {
 			fmt.Println("failed to create room")
 			return

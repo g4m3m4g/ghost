@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"ghost/internal/client"
+	"github.com/g4m3m4g/ghost/internal/client"
 
 	"github.com/spf13/cobra"
 )

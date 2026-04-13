@@ -1,4 +1,4 @@
-module ghost
+module github.com/g4m3m4g/ghost
 
 go 1.26.1
 
