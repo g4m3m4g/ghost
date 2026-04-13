@@ -1,4 +1,5 @@
-FROM golang:1.22
+# Build stage
+FROM golang:1.26.1 AS builder
 
 WORKDIR /app
 
@@ -7,6 +8,15 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o server ./server
+RUN go build -o ghost ./server
 
-CMD ["./server"]
+# Run stage (lightweight)
+FROM debian:bookworm-slim
+
+WORKDIR /app
+
+COPY --from=builder /app/ghost .
+
+EXPOSE 8080
+
+CMD ["./ghost"]
